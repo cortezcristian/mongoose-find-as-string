@@ -36,6 +36,10 @@
   },
   "homepage": "https://github.com/cortezcristian/mongoose-find-as-string#readme",
   "dependencies": {
-    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3",
+    "mongoose": "^4.11.13",
+    "should": "^13.1.0"
   }
 }
