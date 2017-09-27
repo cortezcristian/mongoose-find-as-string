@@ -31,3 +31,6 @@ sampleSchema.plugin(mongooseAggregatePaginate);
 
 ## License
 [MIT][license-url]
+
+[mongoose]: http://mongoosejs.com
+[license-url]: LICENSE
