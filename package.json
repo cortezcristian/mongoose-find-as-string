@@ -1,0 +1,40 @@
+{
+  "name": "mongoose-find-as-string",
+  "version": "1.0.0",
+  "description": "Mongoose plugin that let you query every field as string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cortezcristian/mongoose-find-as-string.git"
+  },
+  "keywords": [
+    "mongoose",
+    "aggregate",
+    "search",
+    "string",
+    "date",
+    "types",
+    "find",
+    "cast",
+    "sort",
+    "timezone",
+    "searchasstring",
+    "filter",
+    "filtering",
+    "timestamp",
+    "limit",
+    "paginate"
+  ],
+  "author": "Cristian Cortez <cortez.cristian@gmail.com> (http://cortezcristian.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cortezcristian/mongoose-find-as-string/issues"
+  },
+  "homepage": "https://github.com/cortezcristian/mongoose-find-as-string#readme",
+  "dependencies": {
+    "mongoose": "^4.11.13"
+  }
+}
