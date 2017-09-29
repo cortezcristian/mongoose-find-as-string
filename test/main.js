@@ -48,12 +48,31 @@ sampleSchema.plugin(mongooseFindAsString);
 // Export module
 const SampleModel = mongoose.model('Sample', sampleSchema);
 
+
 describe('Monggose#findAsString tests', function () {
 
+  before(function(done) {
+    const sample = new SampleModel({
+      name: 'John Doe',
+      qty: 55,
+      startDate: new Date(2017, 4, 20),
+      live: false,
+    });
+
+    sample.save(done);
+  });
+
   it('should return an object', function(done) {
-    const result = SampleModel.findAsString();
-    result.should.be.an.Object();
-    result.should.be.empty();
-    done();
+    SampleModel.findAsString({
+      name: 'doe',
+      qty: '5',
+      startDate: '2017',
+      live: 'fals',
+    }).exec((err, docs) => {
+      // docs
+      //
+      console.log('>', err, docs);
+      done();
+    });
   });
 });

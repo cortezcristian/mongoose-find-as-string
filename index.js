@@ -1,5 +1,3 @@
-const findAsString  = require('./lib/mongoose-find-as-string')
+const findAsStringPlugin  = require('./lib/mongoose-find-as-string');
 
-module.exports = function (schema) {
-  schema.statics.findAsString = findAsString;
-};
+module.exports = findAsStringPlugin;
