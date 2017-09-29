@@ -21,13 +21,68 @@ This plugin must first be added to a schema:
 
 ```js
 
-var mongooseAggregatePaginate = require('mongoose-find-as-string');
+const mongoosefindAsString = require('mongoose-find-as-string');
 
-sampleSchema.plugin(mongooseAggregatePaginate);
+sampleSchema.plugin(mongoosefindAsString);
 
 ```
 
 `SampleModel` will have a new function called `findAsString` (e.g. `SampleModel.findAsString()`).
+
+### Finding
+
+Let's say we have the following schema definition:
+
+```js
+const mongoose = require('mongoose');
+const mongoosefindAsString = require('mongoose-find-as-string');
+const Schema = mongoose.Schema;
+
+const sampleSchema = new Schema({
+  name          : String,
+  qty           : { type: Number, default: 100 },
+  live          : { type: Boolean, default: true },
+  startDate     : Date,
+});
+
+// Add the plugin
+sampleSchema.plugin(mongooseFindAsString);
+
+// Export module
+const SampleModel = mongoose.model('Sample', sampleSchema);
+
+// Create a sample document and persist it
+mongoose.connect('mongodb://localhost/sample-test');
+
+const sample = new SampleModel({
+  name: 'John Doe',
+  qty: 55,
+  startDate: new Date(2017, 4, 20),
+  live: false,
+});
+
+sample.save();
+
+```
+
+You can find number as string:
+
+```js
+SampleModel.findAsString({
+  name: 'doe',
+  qty: '5',
+  startDate: '2017',
+  live: 'fals',
+}).exec((err, docs) => {
+  // docs:
+  // [ { _id: 59cdcf3528426e6b4e64e345,
+  //    name: 'John Doe',
+  //    startDate: 2017-05-20T03:00:00.000Z,
+  //    live: false,
+  //    __v: 0 } ]
+});
+```
+
 
 ## License
 [MIT][license-url]
