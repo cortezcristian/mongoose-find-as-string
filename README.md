@@ -2,11 +2,19 @@
 
 > `mongoose-find-as-string` is a [Mongoose][mongoose] plugin that enables you to search on every property as string, that means it searches on non-text field types as Dates, Booleans, etc.
 
+[![Build Status](https://travis-ci.org/cortezcristian/mongoose-find-as-string.svg?branch=master)](https://travis-ci.org/cortezcristian/mongoose-find-as-string)
 [![npm version](https://badge.fury.io/js/mongoose-find-as-string.svg)](https://badge.fury.io/js/mongoose-find-as-string)
 [![Dependency Status](https://gemnasium.com/badges/github.com/cortezcristian/mongoose-find-as-string.svg)](https://gemnasium.com/github.com/cortezcristian/mongoose-find-as-string)
 
 
-Motivation: let's say a user enters `2017` one option is to start searching the Date field using `$gt` and `$lt` for that period. But what happens when a user searches for `20` that can match years, months, days, hours, etc. If text indexes, virtual props and extensive aggreate pipelines are giving you a headhache: this plugin is just for you.
+Motivation:
+
+- Date Use Case: let's say a user enters `2017` one option is to start searching the Date field using `$gt` and `$lt` for that period. But what happens when a user searches for `20` that can match years, months, days, hours, etc.
+- Number Use Case: a user wants to search all numeric fields as string, in example `20` shuould match 200, 320, etc.
+- Boolean Use Case: a user wants to search `tr` and is trying to match `true`.
+
+
+If text indexes, virtual props and extensive aggreate pipelines are giving you a headhache: this plugin is just for you.
 
 ## Index
 * [Install](#install)
